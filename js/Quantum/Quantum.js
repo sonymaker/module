@@ -7,25 +7,26 @@ try {
 			paths	: {
 				'jquery'		: 'lib/jquery-1.12.4.min',
 				'underscore'	: 'lib/underscore-min',
-				
+
 				'intro'		: 'intro',
 				'element'	: 'Element',
-				
+
 				'readgrid'			: 'modules/Read/ReadGrid',
 				'enterprisegrid'	: 'modules/Enterprise/EnterpriseGrid'
 			},
 			shim	: {
 				'element'			: {deps	: ['intro']},
-				
+
 				'readgrid'			: {deps	: ['element']},
 				'enterprisegrid'	: {deps	: ['readgrid']}
 			}
+			
 		});
-		
+
 		requirejs([ 'jquery', 'underscore' ], function(jq) {
 			var jq = jq.noConflict();
 			requirejs([ 'enterprisegrid' ], function() {
-				
+
 			});
 		});
 	}
